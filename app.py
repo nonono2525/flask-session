@@ -10,5 +10,13 @@ app = Flask(__name__)  # Flask 애플리케이션 객체 생성
 def hello():
     return "Hello, World!"  # 브라우저에 출력될 텍스트
 
+@app.route("/challenge")  #라우트 추가
+def challenge():
+    return "Weekly Challenge"
+
+@app.route("/user/<username>")
+def show_user(username):
+    return f"안녕하세요, {username}님"
+
 if __name__ == "__main__":
     app.run(debug=True)  # 개발 서버 실행 (디버그 모드)
